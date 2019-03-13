@@ -1,9 +1,9 @@
-const express = require('express');
-const app = express()
+var http = require('http');
 
-app.get('/', (req, res)=> res.send('hello world from GIT'));
+//create a server object:
+http.createServer(function (req, res) {
+  res.write('Hello dev-ops World!'); //write a response to the client
+  res.end(); //end the response
+}).listen(3000); //the server object listens on port 8080
 
-app.listen (3000, ()=>{
-
-    console.log('Running our Hello World app on port 3000');
-})
+console.log ("Point your broswer to Port http://localhost:3000");
